@@ -1,0 +1,72 @@
+Net framework
+	Common language Specification, Common language Runtime
+	.net Architecture
+    .net framework .net core xamarin
+    garbage collector
+
+OOP
+	inheritance
+		final
+	polymorhp
+		Interfaces
+		overriding
+		overloading
+	encapsulamiento
+		access modifier 
+	abstraccion
+		variance and covariance
+		casting
+    
+c# language
+	access modifier 
+	lanuage words 
+		static
+	constructor
+	null
+	types (value, reference)		
+	Common type System CTS
+    struct
+    enum
+    nullable
+    ? =? 
+    wrappers
+	serialization 
+		cloning (shaloow and deep)
+		serialization deserialization		
+	array
+	Collections
+		https://docs.microsoft.com/en-us/dotnet/standard/collections/
+	Generics
+	Extensions extend methods
+    Delegates
+    thread
+		sync async 
+	exceptions
+		handle & no
+		try catch finally thorws
+		
+	reflexion
+	functional programming => arrow functions
+	linq
+    tipos anonimos
+
+	
+nuggets
+
+net 
+
+    Entity framework
+    Dapper
+	Razzor
+	MVC
+		controllers
+		Repository pattern
+		config
+
+.net core
+    microservices
+    rest API
+
+Patterns
+
+SOLID principles
