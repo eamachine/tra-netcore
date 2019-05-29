@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using tra_core_1.Business;
+using tra_core_1.Model;
 
 namespace tra_core_1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class PersonController : ControllerBase
     {
+        IRepositoryPerson repositoryPerson;
+        public PersonController(IRepositoryPerson repositoryPerson)
+        {
+            this.repositoryPerson = repositoryPerson;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<Person> Get()
         {
-            return new string[] { "carlos", "gonzalez" };
+            return repositoryPerson.GetPerson();
         }
 
         // GET api/values/5
