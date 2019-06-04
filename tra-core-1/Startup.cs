@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using tra_core_1.Business;
+using tra_core_1.Repository;
 
 namespace tra_core_1
 {
@@ -28,6 +29,8 @@ namespace tra_core_1
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<IRepositoryPerson, RepositoryPerson>();
             services.AddScoped<IRepositoryCompany, RepositoryCompany>();
+
+            services.AddScoped<IServicesPerson, ServicesPerson>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

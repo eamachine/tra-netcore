@@ -12,17 +12,17 @@ namespace tra_core_1.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        IRepositoryPerson repositoryPerson;
-        public PersonController(IRepositoryPerson repositoryPerson)
+        IServicesPerson ServicesPerson;
+        public PersonController(IServicesPerson ServicesPerson)
         {
-            this.repositoryPerson = repositoryPerson;
+            this.ServicesPerson = ServicesPerson;
         }
 
         // GET api/values
         [HttpGet]
         public ActionResult<Person> Get()
         {
-            return repositoryPerson.GetPerson();
+            return ServicesPerson.GetPerson();
         }
 
         // GET api/values/5

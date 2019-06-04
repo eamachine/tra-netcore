@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tra-core-1", "tra-core-1.csproj", "{401813B8-AD2C-48DA-8DD9-D39C5BC07B88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tra-core-1.Tests", "..\tra-core-1.Tests\tra-core-1.Tests\tra-core-1.Tests.csproj", "{22C263B4-B880-400A-98B6-83331E957A23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{401813B8-AD2C-48DA-8DD9-D39C5BC07B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{401813B8-AD2C-48DA-8DD9-D39C5BC07B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{401813B8-AD2C-48DA-8DD9-D39C5BC07B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C263B4-B880-400A-98B6-83331E957A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C263B4-B880-400A-98B6-83331E957A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C263B4-B880-400A-98B6-83331E957A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C263B4-B880-400A-98B6-83331E957A23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
