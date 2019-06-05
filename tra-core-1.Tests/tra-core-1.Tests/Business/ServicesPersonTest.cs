@@ -9,13 +9,17 @@ namespace tra_core_1.Tests
 {
     public class ServicesPersonTest
     {
-        [Fact]
-        public void IsContactable_should_false_for_empty()
+        [Theory]
+        [InlineData("","")]
+        [InlineData(null, "")]
+        [InlineData("", null)]
+        [InlineData(null, null)]
+        public void IsContactable_should_false_for_empty_and_null(String email, String phone)
         {
             // Arrange 
             var contactInfo = new ContactInfo();
-            contactInfo.Email = "";
-            contactInfo.Phone = "";
+            contactInfo.Email = email;
+            contactInfo.Phone = phone;
             var person = new Person(contactInfo);
 
             Mock<IRepositoryPerson> repository = new Mock<IRepositoryPerson>();
@@ -32,35 +36,17 @@ namespace tra_core_1.Tests
 
         }
 
-        [Fact]
-        public void IsContactable_should_false_for_null()
+
+        [Theory]
+        [InlineData("mail@mail.co", null)]
+        [InlineData(null, "123456")]
+        [InlineData("mail@mail.co", "123456")]
+        public void IsContactable_should_true_with_any(String email, String phone)
         {
             // Arrange 
             var contactInfo = new ContactInfo();
-            contactInfo.Email = null;
-            contactInfo.Phone = null;
-            var person = new Person(contactInfo);
-
-            Mock<IRepositoryPerson> repository = new Mock<IRepositoryPerson>();
-            repository.Setup(x => x.GetPerson()).Returns(person);
-
-            var servicesPerson = new ServicesPerson(repository.Object);
-            
-
-            // Act
-            var isContactable = servicesPerson.IsContactable();
-
-            // Assert 
-            Assert.False(isContactable);
-        }
-
-        [Fact]
-        public void IsContactable_should_true_with_email()
-        {
-            // Arrange 
-            var contactInfo = new ContactInfo();
-            contactInfo.Email = "mail@mail.co";
-            contactInfo.Phone = null;
+            contactInfo.Email = email;
+            contactInfo.Phone = phone;
             var person = new Person(contactInfo);
 
             Mock<IRepositoryPerson> repository = new Mock<IRepositoryPerson>();
@@ -76,25 +62,5 @@ namespace tra_core_1.Tests
             Assert.True(isContactable);
         }
 
-        [Fact]
-        public void IsContactable_should_true_with_phone()
-        {
-            // Arrange 
-            var contactInfo = new ContactInfo();
-            contactInfo.Email = null;
-            contactInfo.Phone = "123456";
-            var person = new Person(contactInfo);
-
-            Mock<IRepositoryPerson> repository = new Mock<IRepositoryPerson>();
-            repository.Setup(x => x.GetPerson()).Returns(person);
-
-            var servicesPerson = new ServicesPerson(repository.Object);            
-
-            // Act
-            var isContactable = servicesPerson.IsContactable();
-
-            // Assert 
-            Assert.True(isContactable);
-        }
     }
 }
